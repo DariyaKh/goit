@@ -1,15 +1,26 @@
-a = input('Insert first number: ')
-b = input('Insert second number: ')
-c = input ('choose operation: 1 for "+", 2 for "-", 3 for "*", 4 for "/"  ')
-c = int(c)
-a = float(a)
-b = float(b)
 
-if c == 1:   result = (a + b)
-else:
-    if c == 2:  result = (a - b)
+result = 0
+i = 0
+j = 0
+while j == 0:
+    i+=1
+    if i%2 == 0 and i!=1:
+        operation = input ('Insert operation: ')
+        if operation.isdigit(): operation = input ('Insert operation once again: ')
+        if operation == '=': j=1
+
     else:
-        if c == 3: result = (a*b)
-        else: result = (a/b)
-     
-print(result)
+        
+            if i == 1: result = float(input('Insert operand: '))
+            else: 
+                try:
+                  number = float(input('Insert operand: '))
+                except ValueError: print ('Insert operand once again: ')
+                    number = float(input)
+                    if operation == '+': result = result + number
+                    if operation == '-': result = result - number
+                    if operation == '*': result = result * number
+                    if operation == '/': result = result / number
+          
+print(result)     
+    
